@@ -53,18 +53,16 @@ def add_note():
 def app():
     keep_going = True
     print_ui_message("Welcome to Decorated Notes!\nUser input is case-insensitive.")
+    menu_elements = {"1": "Add new note", "2": "List saved notes", "Q": "Quit"}
     while keep_going:
-        menu_elements = {"1": "Add new note", "2": "List saved notes", "Q": "Quit"}
         print_menu(menu_elements)
         user_input = let_user_select_menu("What would you like to do now? ", menu_elements)
-
         if user_input == "1":
             add_note()
         elif user_input == "2":
             list_notes()
         elif user_input == "Q":
             keep_going = False
-            continue
     print_ui_message("Bye!")
 
 
